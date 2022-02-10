@@ -2,8 +2,17 @@ import pygame
 import random
 
 pygame.init()
-screen=pygame.display.set_mode([500,500]) 
+
+screensize=700
+screen=pygame.display.set_mode([screensize,screensize]) # Control screen size 
 
 for i in range(100000000):
-   pygame.draw.circle(screen, [0,0,255], [100,100], 50)
-   pygame.display.update()
+  red=random.randint(0,255)
+  blue=random.randint(0,255)
+  green=random.randint(0,255)
+  
+  x = 500
+  y = 500
+  scale=60
+  pygame.draw.circle(screen, [red,green,blue], [x,y], scale)
+  pygame.display.update()
