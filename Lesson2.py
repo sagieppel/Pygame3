@@ -4,16 +4,25 @@ import random
 pygame.init()
 
 screensize=700
-screen=pygame.display.set_mode([screensize,screensize]) # Control screen size 
+screen=pygame.display.set_mode([screensize,screensize]) # Control screen size
+
+enemy={}
+enemy["x"]=50
+enemy["y"]=50
+enemy["color"] = [255,0,0]
+enemy["size"] = 30
+
 
 for i in range(100000000):
   pygame.event.get()
   x,y = pygame.mouse.get_pos()
   
-  color = [0 , 200 ,0]
-  
+  color = [0, 255, 0]
   size = 15
   
-  pygame.draw.circle(screen, color, [x,y], size)
+  screen.fill([0,0,0])
+  pygame.draw.circle(screen, color , [x,y], size)
+  
+  pygame.draw.circle(screen, enemy["color"] , [enemy["x"],enemy["y"]], enemy["size"])
   
   pygame.display.update()
