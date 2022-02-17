@@ -21,6 +21,5 @@ for i in range(100000000):
   size = random.randint(0,5)
   
   pygame.draw.circle(screen, [red,green,blue], [x,y], size)
-  pygame.time.delay(10) # Wait 10 milli seconds
   
   pygame.display.update()
