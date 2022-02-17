@@ -23,6 +23,9 @@ for i in range(100000000):
   screen.fill([0,0,0])
   pygame.draw.circle(screen, color , [x,y], size)
   
-  pygame.draw.circle(screen, enemy["color"] , [enemy["x"],enemy["y"]], enemy["size"])
+  
+  enemy["x"]+=0.1
+  enemy["y"]+=0.3
+  pygame.draw.circle(screen, enemy["color"] , [int(enemy["x"]),int(enemy["y"])], enemy["size"])
   
   pygame.display.update()
