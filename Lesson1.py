@@ -15,11 +15,12 @@ for i in range(100000000):
   blue=random.randint(0,255)
   green=random.randint(0,255)
   
-  x = x+random.randint(-30,30)
-  y = y+random.randint(-30,30)
+  x = x+random.randint(-40,40)
+  y = y+random.randint(-40,40)
   
-  size = random.randint(0,3)
+  size = random.randint(0,5)
   
   pygame.draw.circle(screen, [red,green,blue], [x,y], size)
+  pygame.time.delay(10) # Wait 10 milli seconds
   
   pygame.display.update()
