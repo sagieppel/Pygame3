@@ -1,20 +1,25 @@
 import pygame 
 import random
-
+#------------------------------------------
 def create():
    enemy={}
-   enemy["x"]=400
-   enemy["y"]=200
-   enemy["color"] = [0,255,255]
-   enemy["size"] = 100
+   enemy["x"]=110
+   enemy["y"]=100
+   enemy["color"] = [255,0,0]
+   enemy["size"] = 30
+  # enemy["speedx"] = 0.1
+  # enemy["speedy"] = 0.1
    return enemy
-
+#------------------------------------------------
 def move():
-  enemy["x"]+=0.1
-  enemy["y"]+=0.0
+  # enemy["x"]+=enemy["speedx"]
+  # enemy["y"]+=enemy["speedy"]
+  if enemy["x"]>x:
+        enemy["x"]+=-0.1
+  if enemy["x"]<x:
+        enemy["x"]+=0.1
   pygame.draw.circle(screen, enemy["color"] , [int(enemy["x"]),int(enemy["y"])], enemy["size"])
-  
-
+#------------------------------------------------------------------
 
 pygame.init()
 
