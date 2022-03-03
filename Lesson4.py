@@ -21,9 +21,9 @@ def move():
       enemy["speedy"] = -0.2
   else:
        enemy["speedy"] = 0.2
-   
-  if abs(enemy["x"]-x)< enemy["size"]:
-      if  abs(enemy["y"]-y)< enemy["size"]:
+  distx=abs(enemy["x"]-x)
+  disty=abs(enemy["y"]-y)
+  if distx< enemy["size"] and disty < enemy["size"]:
             enemy["color"] = [0,0,255]
   
   enemy["x"]+=enemy["speedx"]
