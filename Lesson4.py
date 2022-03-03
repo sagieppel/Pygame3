@@ -7,12 +7,18 @@ def create():
    enemy["y"]=200
    enemy["color"] = [255,0,0]
    enemy["size"] = 30
-   enemy["speedx"] = 0.1
+   enemy["speedx"] =0.1
    enemy["speedy"] = 0
    return enemy
 #------------------------------------------------
 def move():
-  enemy["x"]=enemy["x"]+enemy["speedx"]
+  if enemy["x"]>x:
+      enemy["speedx"] = -0.1
+  else:
+       enemy["speedx"] = 0.1
+   
+       
+  enemy["x"]+=enemy["speedx"]
   enemy["y"]=enemy["y"]+enemy["speedy"]
   pygame.draw.circle(screen, enemy["color"] , [int(enemy["x"]),int(enemy["y"])], enemy["size"])
 #------------------------------------------------------------------
@@ -31,6 +37,7 @@ for i in range(100000000):
   x,y = pygame.mouse.get_pos() # Get mouse position
   pcolor = [0, 255, 0]
   psize = 15
+
   pygame.draw.circle(screen, pcolor , [x,y], psize) # Draw circle at mouse pistion
   
   move() # Move enemy
