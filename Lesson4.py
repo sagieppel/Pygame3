@@ -13,13 +13,21 @@ def create():
 #------------------------------------------------
 def move():
   if enemy["x"]>x:
-      enemy["speedx"] = -0.1
+      enemy["speedx"] = -0.2
   else:
-       enemy["speedx"] = 0.1
+       enemy["speedx"] = 0.2
+  
+  if enemy["y"]>y:
+      enemy["speedy"] = -0.2
+  else:
+       enemy["speedy"] = 0.2
    
-       
+  if abs(enemy["x"]-x)< enemy["size"]:
+      if  abs(enemy["y"]-y)< enemy["size"]:
+            enemy["color"] = [0,0,255]
+  
   enemy["x"]+=enemy["speedx"]
-  enemy["y"]=enemy["y"]+enemy["speedy"]
+  enemy["y"]+=enemy["speedy"]
   pygame.draw.circle(screen, enemy["color"] , [int(enemy["x"]),int(enemy["y"])], enemy["size"])
 #------------------------------------------------------------------
 
