@@ -7,7 +7,7 @@ screensize=700
 screen=pygame.display.set_mode([screensize,screensize]) # Control screen size 
 
 for i in range(100000000):
-  
+ # screen.fill(0)
   pygame.event.get()
   x,y = pygame.mouse.get_pos()
   
@@ -21,5 +21,6 @@ for i in range(100000000):
   size = random.randint(0,5)
   
   pygame.draw.circle(screen, [red,green,blue], [x,y], size)
-  
+  pygame.time.wait(10)
+ 
   pygame.display.update()
