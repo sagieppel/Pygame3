@@ -1,11 +1,11 @@
 import pygame 
 import random
 
-def create():
+def create(x,y): # Create circle 
     circle={}
-    circle["color"] = [200,255,0]
-    circle["x"] = 100
-    circle["y"] = 200
+    circle["color"] =  [145,255,100]
+    circle["x"] = x
+    circle["y"] = y
     circle["radius"] = 10
     return circle
 
@@ -14,14 +14,19 @@ def draw(circle):
        pygame.draw.circle(screen, circle["color"] , [int(circle["x"]),int(circle["y"])], int(circle["radius"]))
 
 
-pygame.init()
-screensize=600 
-screen=pygame.display.set_mode([screensize,screensize])
-circle=create()
 
-for i in range(10000):
+pygame.init() # Set the screen
+screensize=700 
+screen=pygame.display.set_mode([screensize,screensize])
+
+
+for i in range(100000):
      #  screen.fill([0,0,0])
-     #  pygame.event.get()
-     #  x,y = pygame.mouse.get_pos() # Get mouse position
+       pygame.event.get()
+       x,y = pygame.mouse.get_pos() # Get mouse position
+       
+       circle=create(x,y)
+       #print(x)
+     
        draw(circle)
        pygame.display.update()
