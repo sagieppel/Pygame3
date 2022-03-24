@@ -18,3 +18,7 @@ pygame.init()
 screensize=600 
 screen=pygame.display.set_mode([screensize,screensize])
 circle=create()
+
+for i in range(10000):
+       draw(circle)
+       pygame.display.update()
