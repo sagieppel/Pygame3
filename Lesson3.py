@@ -6,13 +6,14 @@ def create(x,y): # Create circle
     circle["color"] =  [random.randint(0,255),random.randint(0,255),random.randint(0,255)]
     circle["x"] = x
     circle["y"] = y
-    circle["radius"] = 10
+    circle["size"] = 10
     circle["grow"]=0.1
     return circle
 
 
 def draw(circle):
-       pygame.draw.circle(screen, circle["color"] , [int(circle["x"]),int(circle["y"])], int(circle["radius"]))
+       circle["size"]+=circle["grow"]       
+       pygame.draw.circle(screen, circle["color"] , [int(circle["x"]),int(circle["y"])], int(circle["size"]))
 
 
 
