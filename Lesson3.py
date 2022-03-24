@@ -20,7 +20,7 @@ screen=pygame.display.set_mode([screensize,screensize])
 circle=create()
 
 for i in range(10000):
-       screen.fill([0,0,0])
+     #  screen.fill([0,0,0])
      #  pygame.event.get()
      #  x,y = pygame.mouse.get_pos() # Get mouse position
        draw(circle)
