@@ -10,6 +10,7 @@ def create(x,y): # Create circle
     circle["grow"] = 0
     circle["speedx"] = random.randint(-100,100)/100
     circle["speedy"] = random.randint(-100,100)/100
+    circle["force"] = 0.1
     return circle
 
 
@@ -22,6 +23,12 @@ def draw(circle):
        
        circle["x"] +=  circle["speedx"]
        circle["y"] +=  circle["speedy"]
+       if circle["y"]>300: 
+           circle["force"]= -0.1
+       else: 
+            circle["force"]= 0.1 
+       circle["speedy"] += circle["force"]
+       
        pygame.draw.circle(screen, circle["color"] , [int(circle["x"]),int(circle["y"])], int(circle["size"]))
 
 pygame.init() # Set the screen
