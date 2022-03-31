@@ -21,8 +21,10 @@ screen=pygame.display.set_mode([screensize,screensize])
 
 ar=[] # Set array of circle 
 
-for i in range(100000):
-      # screen.fill([0,0,0])
+for i in range(1000000):
+       screen.fill([0,0,0])
+       if len(ar)>100:
+             del ar[0]
        pygame.event.get()
        x,y = pygame.mouse.get_pos() # Get mouse position
        circle=create(x,y)
