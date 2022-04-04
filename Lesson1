@@ -1,0 +1,47 @@
+import pygame
+import random
+
+pygame.init()
+ScreenSize = 700
+screen=pygame.display.set_mode([ScreenSize,ScreenSize])
+
+#-----------------------------------------------------------------------------------------------------------------
+def createObj(x,y):
+    obj={}
+
+    obj['Image']=pygame.image.load('asteroid.png')
+    obj['Image']=pygame.transform.scale(obj['Image'],[40,40])
+    obj["x"] = x
+    obj["y"] = y
+    return obj
+#-----------------------------------------------------------------------------------------------------------------------
+def update(obj):
+    obj["y"]+=2
+    screen.blit(obj["Image"], (int(obj["x"]) , int(obj["y"]) ))
+#-----------------------------------------------------------------------------------------------------------------------
+Background=pygame.image.load('Space.jpg')
+Background=pygame.transform.scale(Background,(ScreenSize,ScreenSize))
+#-----------------------------------------------------------------------------------------
+sound = pygame.mixer.Sound("boom.wav")
+#---------------------------------------------------------------------------------------------------
+objArray=[]
+#--------------------------------------------------------------------------------------------------------------
+while (True):
+  #  pygame.time.delay(1)
+  #  pygame.display.set_caption("this is a game")
+#    screen.blit(Background, (0, 0)
+    screen.fill([0,0,0])
+    ev = pygame.event.get()
+    x, y = pygame.mouse.get_pos()
+    for event in ev:
+        #if event.type == pygame.MOUSEMOTION:
+        if event.type == pygame.MOUSEBUTTONDOWN:
+#-------------------------------------------------------------------------------------------------------------
+            pygame.mixer.Sound.play(sound)
+            obj = createObj(x, y)
+            objArray.append(obj)
+# -----------------------------------------------------------------------------------------------
+    for obj in objArray:
+            update(obj)
+#-----------------------------------------------------------------------------------------------
+    pygame.display.update()
